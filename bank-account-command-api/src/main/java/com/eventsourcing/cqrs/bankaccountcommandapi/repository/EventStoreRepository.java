@@ -1,4 +1,4 @@
-package com.eventsourcing.cqrs.bankaccountcommandapi.domain;
+package com.eventsourcing.cqrs.bankaccountcommandapi.repository;
 
 import com.eventsourcing.cqrs.bankaccountcorecqrs.events.EventModel;
 import org.springframework.data.mongodb.repository.MongoRepository;

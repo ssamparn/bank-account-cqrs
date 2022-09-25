@@ -1,7 +1,7 @@
 package com.eventsourcing.cqrs.bankaccountcommandapi.infrastructure;
 
 import com.eventsourcing.cqrs.bankaccountcommandapi.domain.AccountAggregate;
-import com.eventsourcing.cqrs.bankaccountcommandapi.domain.EventStoreRepository;
+import com.eventsourcing.cqrs.bankaccountcommandapi.repository.EventStoreRepository;
 import com.eventsourcing.cqrs.bankaccountcorecqrs.events.BaseEvent;
 import com.eventsourcing.cqrs.bankaccountcorecqrs.events.EventModel;
 import com.eventsourcing.cqrs.bankaccountcorecqrs.exceptions.AggregateNotFoundException;
