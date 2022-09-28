@@ -4,8 +4,5 @@ import com.eventsourcing.cqrs.bankaccountcorecqrs.commands.BaseCommand;
 import lombok.Data;
 
 @Data
-public class CloseAccountCommand extends BaseCommand {
-    public CloseAccountCommand(String id) {
-        super(id);
-    }
+public class RestoreReadDatabaseCommand extends BaseCommand {
 }

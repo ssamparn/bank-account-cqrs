@@ -4,6 +4,7 @@ import com.eventsourcing.cqrs.bankaccountcommandapi.handlers.CommandHandler;
 import com.eventsourcing.cqrs.bankaccountcommandapi.web.api.commands.CloseAccountCommand;
 import com.eventsourcing.cqrs.bankaccountcommandapi.web.api.commands.DepositFundsCommand;
 import com.eventsourcing.cqrs.bankaccountcommandapi.web.api.commands.OpenAccountCommand;
+import com.eventsourcing.cqrs.bankaccountcommandapi.web.api.commands.RestoreReadDatabaseCommand;
 import com.eventsourcing.cqrs.bankaccountcommandapi.web.api.commands.WithdrawFundsCommand;
 import com.eventsourcing.cqrs.bankaccountcorecqrs.infrastructure.CommandDispatcher;
 import lombok.RequiredArgsConstructor;
@@ -24,5 +25,6 @@ public class BankAccountCommandConfig {
         commandDispatcher.registerHandler(DepositFundsCommand.class, commandHandler::handle);
         commandDispatcher.registerHandler(WithdrawFundsCommand.class, commandHandler::handle);
         commandDispatcher.registerHandler(CloseAccountCommand.class, commandHandler::handle);
+        commandDispatcher.registerHandler(RestoreReadDatabaseCommand.class, commandHandler::handle);
     }
 }

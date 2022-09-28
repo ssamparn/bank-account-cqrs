@@ -4,6 +4,7 @@ import com.eventsourcing.cqrs.bankaccountcommandapi.domain.AccountAggregate;
 import com.eventsourcing.cqrs.bankaccountcommandapi.web.api.commands.CloseAccountCommand;
 import com.eventsourcing.cqrs.bankaccountcommandapi.web.api.commands.DepositFundsCommand;
 import com.eventsourcing.cqrs.bankaccountcommandapi.web.api.commands.OpenAccountCommand;
+import com.eventsourcing.cqrs.bankaccountcommandapi.web.api.commands.RestoreReadDatabaseCommand;
 import com.eventsourcing.cqrs.bankaccountcommandapi.web.api.commands.WithdrawFundsCommand;
 import com.eventsourcing.cqrs.bankaccountcorecqrs.handlers.EventSourcingHandler;
 import lombok.RequiredArgsConstructor;
@@ -45,5 +46,10 @@ public class AccountCommandHandler implements CommandHandler {
         var accountAggregate = eventSourcingHandler.getByAggregateId(command.getId());
         accountAggregate.closeAccount();
         eventSourcingHandler.save(accountAggregate);
+    }
+
+    @Override
+    public void handle(RestoreReadDatabaseCommand command) {
+        eventSourcingHandler.republishEvents();
     }
 }
