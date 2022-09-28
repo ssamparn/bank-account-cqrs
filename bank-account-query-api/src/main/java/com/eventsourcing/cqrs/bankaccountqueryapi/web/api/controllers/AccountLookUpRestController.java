@@ -66,7 +66,7 @@ public class AccountLookUpRestController {
     }
 
     @GetMapping("/get-account-by-account-holder/{accountHolder}")
-    public ResponseEntity<AccountLookUpResponse> getAccountByAccountHolder(@PathVariable(name = "accountId") String accountHolder) {
+    public ResponseEntity<AccountLookUpResponse> getAccountByAccountHolder(@PathVariable(name = "accountHolder") String accountHolder) {
         try {
             List<BankAccountEntity> accountEntities = queryDispatcher.send(new FindAccountByHolderQuery(accountHolder));
             if (accountEntities == null || accountEntities.size() == 0) {
